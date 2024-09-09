@@ -16,7 +16,7 @@ html {
     font-weight: var(--font-weight-bold);
    }
 
-   a[href] {
+   a:link {
     color: #161616;
     text-decoration: none;
    }
