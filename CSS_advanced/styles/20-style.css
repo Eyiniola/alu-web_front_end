@@ -422,7 +422,7 @@ html {
     list-style-type: none;
    }
 
-   .row ::after{
+   .row::after {
     content: "";
     display: table;
     clear: both;
