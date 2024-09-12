@@ -598,12 +598,20 @@ html {
     }
 
 
-    .card-work:hover .card-outer {
+    .card-work:hover .card-inner {
         background-color: rgba(0, 0, 0, 0.7);
     }
 
-
     .card-work .card-title {
+       text-align: center;
+       margin: 0;
+       opacity: 0;
+       height: 100%;
+       position: relative;
+    }
+
+
+    .card-work .card-title a {
         display: block;
         text-decoration: none;
         padding-top: 45%;
