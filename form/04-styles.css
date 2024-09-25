@@ -697,7 +697,9 @@
         background-color: var(--color-white);
         box-shadow: none;
         outline: 0;
+        box-sizing: border-box;
     }
+    
 
 
     input[type="text"],
