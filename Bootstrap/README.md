@@ -1,0 +1,1 @@
+This directory contains files from my bootstrap learning journey
