@@ -1,68 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 2 - Cookies</title>
+    <meta charset="utf-8" />
+    <title>Task 2</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <!-- javascript -->
     <script type="application/javascript">
-        function setCookies() {
-            /* Set variables */
-            let firstnameValue = document.getElementById("firstname").value;
-            let emailValue = document.getElementById("email").value;
-            /* create 2 cookies */
-            document.cookie = "firstname=" + firstnameValue + "; expires=864000"; // expires in ten days
-            document.cookie = "email=" + emailValue + "; expires=864000"; // expires in ten days
-            alert('Cookies Set!');
-        }
+        // Create a function createFamilyTree
+        function createFamilyTree() {
+            var $table = $(
+                "<table><thead><tr><th>Firstname</th><th>Lastname></th></tr></thead><tbody><tr><td>Guillaume</td><td>Salva</td></tr><tr><td>Paulette</td><td>Salva</td></tr><tr><td>Antoine</td><td>Salva</td></tr></tbody></table"
+            );
+            $("body").append($table);
+        };
 
-        function showCookies() {
-			/* Set variables */
-			let firstnameValue = document.getElementById("firstname").value;
-			let emailValue = document.getElementById("email").value;
-			/* create a DOM element p */
-			let paragraph = document.createElement("p");
-			/* set the inner html with Cookies: and value of the cookie */
-			paragraph.innerHTML = "Email: " + getCookie(emailValue) + " - Firstname: " + getCookie(firstnameValue);
-			/* add paragraph at the bottom of the page */
-			document.body.appendChild(paragraph);
-		}
-
-        function getCookie(name) {
-            /* checks length of the cookies if null, return "" */
-			if (document.cookie.length == 0)
-			{
-				return ("");
-			}
-			/* Split the cookies chain in an array of individual chains */
-			let sepAllCookies = document.cookie.split("; ");
-			/* browse all the cookies */
-			for (let i = 0; i < document.cookie.length; i++)
-			{
-				/* split the cookie in 2 parts to have name and value */
-				let cookie = sepAllCookies[i].split("=");
-				console.log(cookie[1]);
-				/* check if name of cookie is the same as the arg name */
-				if (cookie[1] == name)
-				{
-					/* return value of cookie */
-					return decodeURIComponent(cookie[1]);
-				}
-			}
-        }
+        $(function () {
+            createFamilyTree();
+        });
     </script>
-
-    <!-- html -->
-    <h1>Login to the website</h1>
-    <div>
-        <input type="text" id="firstname" placeholder="Firstname">
-        <input type="text" id="email" placeholder="Email">
-        <button onclick="setCookies()">Log me in</button>
-    </div>
-
-    <h1>Cookies</h1>
-    <button onclick="showCookies()">Show the cookies</button>
 </body>
+
 </html>
